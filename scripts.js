@@ -194,11 +194,46 @@ var newObject = {
 /**
  * Object Constructors 
  */
+
+ // Here is our blueprint for "Person" objects
 function Person (name, age, hobbies) {
     this.name = name;
     this.age = age;
     this.hobbies = hobbies; 
 }
 
+// Lets make a new isntance of "person!". This called an object. Follows same format as above (name, age, hobbies)
 var jerry = new Person( 'Jerry', 61 ['snowbarding', 'action movies', 'programming']);
+
+// And ANOTHER! Isnt htis easier than typing out a whole object/ every time?! 
 var sally = new Person('Sally', 36, ['daredevil biking', 'skydiving', 'teaching'])
+
+var jimmy = new Person(
+    'Sally', // name: 
+    36, // age: 
+    [
+    'skiing',
+    'running',
+    'hiking'
+    ] // hobbies 
+);
+
+//We can add to the blueprint using "prototype" even after its initial declaration 
+Person.prototype.introduction = function() { // This isa method in our "Person" blueprint/prototype/class!
+    var hobbiesString = `<ul>` // Setup for List HTML. 
+    this.hobbies.forEach( function (value, index) {
+        hobbiesString += `<li>` + value + `</li>` // Loop through our hobbies and make a list item for each 
+    });
+    hobbiesString += `</ul>` // We opened a UL in this string, so lets close it! (Concatenation!)
+
+    //Add HTML to the body. 
+    document.body.innerHTML += `
+    <h2>` + this.name + `</h2>
+    <dl>
+        <dt>Age</dt>
+        <dd>` + this.age `</dd>
+        <dt>Hobbies</dt>
+        <dd>` + hobbiesString /* We built the string above, using this.hobbies! "hobbies string " is a local variable (born in the method, and it will die in the method. ) */ `</dd>
+
+    </dl>`;
+}
