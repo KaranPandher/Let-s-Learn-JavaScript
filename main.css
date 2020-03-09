@@ -41,6 +41,7 @@ nav{
     bottom: auto;
     left: 0;
     background: rgba(55,55,55,1);
+    min-height: 2rem;
 }
 
 nav ul{
@@ -49,6 +50,11 @@ nav ul{
     overflow: auto;
     width: 100%;
     height: 100vh;
+    transition: 0.3s ease all;
+}
+
+.nav-open ul{
+    max-height: calc(100vh - 2rem);
 }
 
 .menu-button {

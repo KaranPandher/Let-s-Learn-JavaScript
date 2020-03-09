@@ -150,7 +150,55 @@ myHeading.addEventListener('click', function(event){
  var myNavButton = document.querySelector( '.menu-button');
 
 // Lets listen for a click on this. 
-myNavButton.addEventListener('click', function(event) {
+ myNavButton.addEventListener('click', function(event) {
         // When clicked add/remove the "nav-open" class (in HTML)
-        myNav.classList.toggle('nav-open');
+      myNav.classList.toggle('nav-open');
 });
+
+/**
+ * Lets dig into objects! 
+ */
+var myObject = {
+    name: 'Jerry',
+    age: 61,
+    hobbies: [
+        'snowboarding',
+        'action movies'
+    ]
+};
+
+console.log(myObject);
+
+console.log('Object "name": ' + myObject.name);
+console.log('Object "age": ' + myObject.age);
+console.log('Object "hobbies": ' + myObject.hobbies[0] + ', ' + myObject.hobbies[1]);
+
+// Lets add to the hobbies array... just like normal! It is an array afterall. 
+// Just stored in an object property instead of a variable this time 
+myObject.hobbies.push('programming');
+console.log('Updated hobbies:')
+console.log(myObject.hobbies);
+
+console.log('Updated objecT: ');
+console.log(myObject);
+
+var newObject = {
+    myNum: 5,
+    updatedNum: function() { // Here is a method! Note the new syntax, versus a function. 
+    this.myNum = this.myNum + 5;
+    return this.myNum; 
+    }
+}
+// newObject.mynum will return 5; however newObject.updatedNum will return 10; Ultimately myObject.myNum now will send 10 as well. 
+
+/**
+ * Object Constructors 
+ */
+function Person (name, age, hobbies) {
+    this.name = name;
+    this.age = age;
+    this.hobbies = hobbies; 
+}
+
+var jerry = new Person( 'Jerry', 61 ['snowbarding', 'action movies', 'programming']);
+var sally = new Person('Sally', 36, ['daredevil biking', 'skydiving', 'teaching'])
