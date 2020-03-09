@@ -200,6 +200,13 @@ function Person (name, age, hobbies) {
     this.name = name;
     this.age = age;
     this.hobbies = hobbies; 
+    this.sayGoodbye = function() { // Setting up a method in a constructor function. 
+        document.body.innerHTML += `
+        <p>
+            This is <strong>` + this.name + `<strong>,
+            saying <em>Goodbye</em>!
+        </p>`
+    }
 }
 
 // Lets make a new isntance of "person!". This called an object. Follows same format as above (name, age, hobbies)
@@ -209,8 +216,8 @@ var jerry = new Person( 'Jerry', 61 ['snowbarding', 'action movies', 'programmin
 var sally = new Person('Sally', 36, ['daredevil biking', 'skydiving', 'teaching'])
 
 var jimmy = new Person(
-    'Sally', // name: 
-    36, // age: 
+    'Jimmy', // name: 
+    42, // age: 
     [
     'skiing',
     'running',
@@ -237,3 +244,7 @@ Person.prototype.introduction = function() { // This isa method in our "Person" 
 
     </dl>`;
 }
+
+Person.prototype.nickname = '';
+    jerry.nickname = 'The Big Jare';
+    sally.nickname = 'Sallers'
