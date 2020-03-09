@@ -138,3 +138,9 @@ myHeading.addEventListener('click', function(event){
  console.log( 'test' === 'test'); // True 
  console.log(36 === '36'); // False 
  console.log(0 == false); // True 
+ console.log( 'test string' === "test string") // True
+
+ /**
+  * HAMBURGER MENU
+  */
+ 
