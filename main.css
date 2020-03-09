@@ -6,6 +6,9 @@
     margin: 0;
 }
 
+body{
+    padding-top: 3rem;
+}
 
 /* * { background: red; } Check to see if they linked */ 
 .gray-text { 
@@ -27,6 +30,9 @@
 /* Responsive Navigation */
 nav{ 
     display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
     padding: 0;
     margin: 0;
     position: fixed; 
@@ -35,4 +41,20 @@ nav{
     bottom: auto;
     left: 0;
     background: rgba(55,55,55,1);
+}
+
+nav ul{
+    max-height: 0;
+    list-style: none;
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+}
+
+.menu-button {
+    position: absolute;
+    top: 0.15rem; 
+    right: 0.85rem; 
+    bottom: auto;
+    left: auto; 
 }
